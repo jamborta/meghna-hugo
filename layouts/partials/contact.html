@@ -64,7 +64,6 @@
     </div>
 
     {{ if .Site.Data.contact.enable_maps }}
-
     {{"<!-- Google Map -->" | safeHTML}}
     <div class="google-map">
         <div id="map-canvas" {{ with .Site.Data.contact.mapLatitude }} data-latitude="{{ . }}" {{ end }} 
