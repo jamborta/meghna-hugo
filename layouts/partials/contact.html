@@ -4,14 +4,15 @@
     <div class="container">
         <div class="row">
 
-            {{"<!-- section title -->" | safeHTML}}
+            {{"<!-- section title --> " | safeHTML}}
             <div class="title text-center wow fadeIn" data-wow-duration="500ms">
-                <h2>{{ with .Site.Data.contact.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.contact.headingSpan }} {{ . }} {{ end }}</span></h2>
+                <h2>{{ with .Site.Data.contact.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.contact.headingSpan }} {{ . }} {{ end }}</span>
+                </h2>
                 <div class="border"></div>
             </div>
-            {{"<!-- /section title -->" | safeHTML}}
+            {{"<!-- /section title --> " | safeHTML}}
 
-            {{"<!-- Contact Details -->" | safeHTML}}
+            {{"<!-- Contact Details --> " | safeHTML}}
             <div class="contact-info col-md-6 wow fadeInUp" data-wow-duration="500ms">
                 {{ with .Site.Data.contact.title }}<h3>{{ . }}</h3> {{ end }}
                 {{ with .Site.Data.contact.content }} <p> {{ . }} </p> {{ end }}
@@ -25,9 +26,10 @@
                 </div>
             </div>
 
-            {{"<!-- Contact Form -->" | safeHTML}}
+            <!--https://harrycresswell.com/articles/form-data-with-zapier/-->
+            {{"<!-- Contact Form --> " | safeHTML}}
             <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                <form id="contact-form" method="post" action="sendmail.php" role="form">
+                <form id="contact-form" method="post" role="form">
 
                     <div class="form-group">
                         <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
@@ -42,15 +44,16 @@
                     </div>
 
                     <div class="form-group">
-                        <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+                        <textarea rows="6" placeholder="Message" class="form-control" name="message"
+                                  id="message"></textarea>
                     </div>
 
                     <div id="mail-success" class="success">
-                        Thank you. The Mailman is on His Way :)
+                        Thank you.
                     </div>
 
                     <div id="mail-fail" class="error">
-                        Sorry, don't know what happened. Try later :(
+                        Sorry, something went wrong!
                     </div>
 
                     <div id="cf-submit">
@@ -64,10 +67,10 @@
     </div>
 
     {{ if .Site.Data.contact.enable_maps }}
-    {{"<!-- Google Map -->" | safeHTML}}
+    {{"<!-- Google Map --> " | safeHTML}}
     <div class="google-map">
-        <div id="map-canvas" {{ with .Site.Data.contact.mapLatitude }} data-latitude="{{ . }}" {{ end }} 
-        {{ with .Site.Data.contact.mapLongitude }} data-longitude="{{ . }}" {{ end }}></div>
+        <div id="map-canvas" {{ with .Site.Data.contact.mapLatitude }} data-latitude="{{ . }}" {{ end }}
+             {{ with .Site.Data.contact.mapLongitude }} data-longitude="{{ . }}" {{ end }}></div>
     </div>
     {{ end }}
 
