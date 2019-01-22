@@ -16,7 +16,9 @@
 				{{"<!-- copyright -->" | safeHTML}}
 				<div class="copyright text-center">
 					<a href="{{ .Site.BaseURL | absURL }}">
-						<img src="{{ .Site.Params.logo | absURL }}" alt="Meghna" /> 
+						<object data="{{ .Site.Params.logo | absURL }}" type="image/svg+xml" height="42px" width="42px">
+							<img src="{{ .Site.Params.logoFallback | absURL }}" height="42px" width="42px" />
+						</object>
 					</a>
 					<br>
 

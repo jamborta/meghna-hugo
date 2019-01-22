@@ -13,7 +13,9 @@
 
             {{"<!-- logo -->" | safeHTML}}
             <a class="navbar-brand logo" href="{{ .Site.BaseURL | absURL }}">
-                <img src="{{ .Site.Params.logo | absURL }}" alt="Logo" />
+                <object data="{{ .Site.Params.logo | absURL }}" type="image/svg+xml" height="42px" width="42px">
+                    <img src="{{ .Site.Params.logoFallback | absURL }}" height="42px" width="42px" />
+                </object>
             </a>
             {{"<!-- /logo -->" | safeHTML}}
         </div>
