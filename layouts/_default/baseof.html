@@ -9,6 +9,9 @@
         {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
 </body>
 
 </html>
