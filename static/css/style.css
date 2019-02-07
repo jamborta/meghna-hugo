@@ -57,6 +57,10 @@ figure {
   margin: 0;
 }
 
+.post-single-content a{
+  color: #0366d6;
+}
+
 a {
   color: #fff;
   transition: all .3s ease-in 0s;
@@ -2118,5 +2122,3 @@ blockquote {
 .form-group:last-child input {
   margin: 0;
 }
-
-/*# sourceMappingURL=maps/style.css.map */

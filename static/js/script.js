@@ -6,8 +6,12 @@ jQuery(function ($) {
     /* ========================================================================= */
 
     // Preloader js
-    $(window).on('load', function () {
-        $('#preloader').fadeOut(700);
+    $(function(){ // this replaces document.ready
+        $(window).on('load', function(){
+            $('#preloader').fadeOut('slow', function() {
+                $(this).remove();
+            });
+        });
     });
 
 
