@@ -7,11 +7,11 @@ jQuery(function ($) {
 
     // Preloader js
     $(function(){ // this replaces document.ready
-        $(window).on('load', function(){
+        setTimeout(function(){
             $('#preloader').fadeOut('slow', function() {
                 $(this).remove();
             });
-        });
+        }, 1500);
     });
 
 
