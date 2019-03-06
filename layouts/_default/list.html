@@ -14,9 +14,9 @@
                 {{"<!-- single blog post -->" | safeHTML}}
                 <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
                     <div class="post-block">
-                        <div class="media-wrapper">
-                            {{ with .Params.image }}<img src="{{ . | absURL }}" alt="post-image" class="img-responsive">{{ end }}
-                        </div>
+                        {{/*<div class="media-wrapper">*/}}
+                            {{/*{{ with .Params.image }}<img src="{{ . | absURL }}" alt="post-image" class="img-responsive">{{ end }}*/}}
+                        {{/*</div>*/}}
 
                         <div class="content">
                             <h3><a class="blog-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
