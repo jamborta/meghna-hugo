@@ -5,6 +5,13 @@
 {{"<!-- body start -->" | safeHTML}}
 
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <script>
+        const iconFile = "{{ .Site.BaseURL}}/img/icons.svg";
+        const buttonCopy = 'Copy to clipboard';
+        const buttonPrint = 'Print';
+        const buttonDownload = 'Download';
+    </script>
+
     <div id="content">
         {{- block "main" . }}{{- end }}
     </div>

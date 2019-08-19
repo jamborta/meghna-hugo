@@ -27,9 +27,13 @@
     <link rel="stylesheet" href="{{"plugins/slick-carousel/slick/slick-theme.css"|absURL}}">
     {{"<!-- Main Stylesheet -->"|safeHTML}}
     <link rel="stylesheet" href="{{"css/style.css"|absURL}}">
+    <link rel="stylesheet" href="{{"css/all.css"|absURL}}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400|Chivo:400|Work+Sans:500,300,600,300italic,400italic,500italic,600italic|Chivo:500,300,600,300italic,400italic,500italic,600italic">
     {{ "<!-- Custom CSS -->" | safeHTML }}
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
+
     {{ end }}
 
 </head>

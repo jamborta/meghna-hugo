@@ -551,7 +551,7 @@ a:hover {
   width: 100%;
   z-index: 99;
   margin-bottom: 0;
-  padding: 10px;
+  padding: 5px;
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   border-color: #2F383D;
@@ -1516,6 +1516,7 @@ a:hover {
 .social-profile ul li {
   margin: 0 10px 0 0;
   display: inline-block;
+  /*font-size: 10px;*/
 }
 
 .social-profile ul li a {
@@ -1612,11 +1613,11 @@ a:hover {
   Footer section
 ==================================================================*/
 .social-icon {
-  padding: 60px 0 35px;
+  padding: 10px 0 35px;
 }
 
 .social-icon ul {
-  text-align: center;
+  text-align: left;
 }
 
 .social-icon ul li {
@@ -1641,8 +1642,8 @@ a:hover {
   background-color: #37a3cc;
   border: 1px solid transparent;
   display: block;
-  height: 70px;
-  width: 70px;
+  height: 35px;
+  width: 35px;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   transition: all 400ms ease-out 0s;
@@ -1650,16 +1651,18 @@ a:hover {
 
 @media (max-width: 768px) {
   .social-icon ul li a {
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
   }
 }
 
 .social-icon ul li a i {
   color: #0a1922;
   display: inline-block;
-  font-size: 32px;
-  line-height: 70px;
+  font-size: 20px;
+  line-height: 35px;
+  height: 35px;
+  width: 23.5px;
   margin: 0;
   opacity: 0.6;
   filter: alpha(opacity=30);
@@ -1676,8 +1679,9 @@ a:hover {
 }
 
 .copyright {
-  padding: 20px 0;
+  padding: 10px 0;
   color: #fff;
+  padding-right: 50px;
 }
 
 .copyright img {
@@ -1685,7 +1689,8 @@ a:hover {
 }
 
 .copyright p {
-  margin-top: 10px;
+  margin-top: 2px;
+  margin: 0em 0;
 }
 
 #scrollUp {

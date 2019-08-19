@@ -4,33 +4,47 @@
 
 {{ partial "navigation.html" . }}
 
-{{"<!-- Start Blog Section -->" | safeHTML}}
-<section id="blog" class="section">
-    <div class="container">
-        <div class="row">
+{{ .Scratch.Set "skipSeeAlso" true }}
 
-            <div class="clearfix">
-                {{ range .Data.Pages }}
-                {{"<!-- single blog post -->" | safeHTML}}
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        {{/*<div class="media-wrapper">*/}}
-                            {{/*{{ with .Params.image }}<img src="{{ . | absURL }}" alt="post-image" class="img-responsive">{{ end }}*/}}
-                        {{/*</div>*/}}
+{{ partial "primary_top.html" . }}
 
-                        <div class="content">
-                            <h3><a class="blog-link" href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                            <p>{{ .Summary }}</p>
-                            <a class="btn btn-main" href="{{ .Permalink }}">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                {{"<!-- /single blog post -->" | safeHTML}}
+<p>{{ .Description }}</p>
+
+{{ if .Params.content_above }}
+    {{ .Content }}
+{{ end }}
+
+<div class="section-index">
+    {{ $pages := (where .Site.Pages "Section" .Section).ByWeight }}
+    {{ $parent := .Page }}
+
+    {{ if $parent.Params.simple_list }}
+        <ul>
+            {{ range $pages }}
+                {{ if eq .Parent $parent }}
+                    <li><a href="{{ .Permalink }}">{{- .Title -}}</a></li>
                 {{ end }}
-            </div>
-        </div>
-    </div>
-</section>
-{{"<!-- /blog -->" | safeHTML}}
+            {{ end }}
+        </ul>
+    {{ else }}
+        {{ range $pages }}
+            {{ if eq .Parent $parent }}
+                <div class="entry">
+                    <h5>
+                        <a href="{{ .Permalink }}">{{- if .Params.icon -}}<i class="page-icon">
+                                {{- partial "icon.html" .Params.icon -}}</i>{{- end -}}{{- .Title -}}</a>
+                    </h5>
+                    <p>{{ .Description }}</p>
+                </div>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>
+
+{{ if not .Params.content_above }}
+    {{ .Content }}
+{{ end }}
+
+{{ partial "primary_bottom.html" . }}
 
 {{ end }}
