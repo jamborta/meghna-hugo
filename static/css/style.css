@@ -2127,3 +2127,8 @@ blockquote {
 .form-group:last-child input {
   margin: 0;
 }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+ display: block;
+}

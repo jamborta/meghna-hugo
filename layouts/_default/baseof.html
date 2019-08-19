@@ -12,10 +12,10 @@
         const buttonDownload = 'Download';
     </script>
 
-    <div id="content">
-        {{- block "main" . }}{{- end }}
-    </div>
+    {{ partial "navigation.html" . }}
+    {{- block "main" . }}{{- end }}
     {{- partial "footer.html" . -}}
+
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
