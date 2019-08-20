@@ -15,8 +15,10 @@
             {{"<!-- Single product Item -->" | safeHTML }}
             <article class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms">
                 <div class="service-block text-center">
-                    <div class="service-icon text-center">
-                        <i class="{{ .icon }}"></i>
+                    <div class="icon-box">
+                        <div class="service-icon text-center">
+                            <i class="{{ .icon }}"></i>
+                        </div>
                     </div>
                     <h3>{{ .title }}</h3>
                     <p>{{ .content }}</p>
